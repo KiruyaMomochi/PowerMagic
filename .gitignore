@@ -1,0 +1,7 @@
+/target
+*.sql
+*.db
+*-shm
+*-wal
+/.idea
+/.vscode
