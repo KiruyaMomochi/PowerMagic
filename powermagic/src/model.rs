@@ -397,7 +397,6 @@ pub struct UnitSkillData {
     // pub ex_skill_5: i64,
     // pub ex_skill_evolution_5: i64,
     pub ex_skill: Vec<i64>,
-    // Looks like this is not used in game
     pub ex_skill_evolution: Vec<i64>,
     pub sp_union_burst: i64,
     // pub sp_skill_1: i64,
@@ -523,16 +522,6 @@ pub struct CharaStoryStatus {
     // pub chara_id_10: i64,
     pub chara_id: Vec<i64>,
 }
-
-// impl CharaStoryStatus {
-//     pub fn add(&self) -> nalgebra::SVector<i64, 17> {
-//         let mut status = nalgebra::SVector::zeros();
-//         for (status_type, status_rate) in self.status.iter() {
-//             status[*status_type as usize] = *status_rate;
-//         }
-//         status
-//     }
-// }
 
 impl<'r> sqlx::FromRow<'r, sqlx::sqlite::SqliteRow> for CharaStoryStatus {
     fn from_row(row: &'r sqlx::sqlite::SqliteRow) -> Result<Self, sqlx::Error> {
