@@ -2,11 +2,9 @@
 
 This is just an experiment.
 
-$$
 \renewcommand{\vec}[1]{\overrightarrow{#1}}
 \newcommand{\rmvec}[1]{\overrightarrow{\mathrm{#1}}}
 \newcommand{\round}{\operatorname{round}}
-$$
 
 ## Basic 
 
