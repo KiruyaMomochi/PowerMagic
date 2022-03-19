@@ -1,9 +1,10 @@
-pub trait CyRound<T> {
-    fn cy_round(self) -> T;
+pub trait CyRound {
+    fn cy_round<T: Round>(self) -> T;
 }
 
-impl<T> CyRound<T> for f64 where T: Round {
-    fn cy_round(self) -> T {
+impl CyRound for f64
+{
+    fn cy_round<T: Round>(self) -> T {
         T::round(self)
     }
 }

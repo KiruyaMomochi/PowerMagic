@@ -6,18 +6,6 @@ mod unit;
 use sqlx::sqlite::SqlitePoolOptions;
 use unit::*;
 
-#[derive(Debug)]
-pub enum Foo {
-    Foo,
-    Bar,
-}
-
-impl Foo {
-    pub fn bar(&mut self) {
-        *self = Foo::Bar;
-    }
-}
-
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let pool = SqlitePoolOptions::new().connect("powermagic.db").await?;
@@ -38,8 +26,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .watch_all_stories()
         .memorized();
 
-    let power = calculator.power();
-    println!("Power: {}", power.round());
+    let power = calculator.power().cy_round::<i32>();
+    println!("Power: {}", power);
 
     Ok(())
 }
